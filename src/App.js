@@ -3,8 +3,12 @@ import EmployeeList from "./components/EmployeeList";
 
 const App = () => {
   return (
-    <div>
-      <EmployeeList />
+    <div className="container-xl">
+      <div className="table-responsive">
+        <div className="table-wrapper">
+          <EmployeeList />
+        </div>
+      </div>
     </div>
   );
 };
