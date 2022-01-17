@@ -1,29 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import Employee from "./Employee";
 
 const EmployeeList = () => {
+  const [employee, setEmployee] = useState([
+    {
+      id: 1,
+      name: "Lumini",
+      email: "lumini@gmail.com",
+      address: "816,Ukwatta,Avissawella",
+      Pphone: "(0725569852)",
+    },
+    {
+      id: 2,
+      name: "Thismini",
+      email: "thismini@gmail.com",
+      address: "816,Ukwatta,Avissawella",
+      Pphone: "(0725569852)",
+    },
+    {
+      id: 3,
+      name: "Akash",
+      email: "akash@gmail.com",
+      address: "816,Ukwatta,Avissawella",
+      Pphone: "(0725569852)",
+    },
+    {
+      id: 4,
+      name: "Thamara",
+      email: "thamara@gmail.com",
+      address: "816,Ukwatta,Avissawella",
+      Pphone: "(0725569852)",
+    },
+    {
+      id: 5,
+      name: "Samanthilake",
+      email: "samanthilake@gmail.com",
+      address: "816,Ukwatta,Avissawella",
+      Pphone: "(0725569852)",
+    },
+  ]);
   return (
     <React.Fragment>
-      <div class="table-title">
-        <div class="row">
-          <div class="col-sm-6">
+      <div className="table-title">
+        <div className="row">
+          <div className="col-sm-6">
             <h2>
               Manage <b>Employees</b>
             </h2>
           </div>
-          <div class="col-sm-6">
+          <div className="col-sm-6">
             <a
               href="#addEmployeeModal"
-              class="btn btn-success"
+              className="btn btn-success"
               data-toggle="modal"
             >
-              <i class="material-icons">&#xE147;</i>{" "}
+              <i className="material-icons">&#xE147;</i>{" "}
               <span>Add New Employee</span>
             </a>
           </div>
         </div>
       </div>
-      <table class="table table-striped table-hover">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th>Name</th>
@@ -35,7 +72,11 @@ const EmployeeList = () => {
         </thead>
         <tbody>
           <tr>
-            <Employee />
+            {employee.map((employee) => (
+              <tr key={employee.id}>
+                <Employee employee={employee} />
+              </tr>
+            ))}
           </tr>
         </tbody>
       </table>
